@@ -45,7 +45,7 @@ struct LoadingScreen {
         "Optimizando rendimiento...",
         "Calibrando sensores...",
         "Preparando interfaz...",
-        "¡Listo para dominar!"
+        "Listo para dominar!"
     };
 
     void update(float deltaTime) {
@@ -418,13 +418,13 @@ struct WeaponData {
 };
 
 // ============================================================================
-// WEAPON DATABASE - ACTUALIZADO 2025
+// WEAPON DATABASE - SOLO ARMAS CON PATRONES COMPLEJOS
 // ============================================================================
 
 std::map<std::string, WeaponData> g_weaponDatabase = {
     // ASSAULT RIFLES
     {"AK47", {
-        "AK47", "🔥 AK-47",
+        "AK47", "AK-47",
         {
             {0.000000,-2.257792},{0.323242,-2.300758},{0.649593,-2.299759},
             {0.848786,-2.259034},{1.075408,-2.323947},{1.268491,-2.215956},
@@ -445,7 +445,7 @@ std::map<std::string, WeaponData> g_weaponDatabase = {
         "AR"
     }},
     {"LR300", {
-        "LR300", "⚡ LR-300",
+        "LR300", "LR-300",
         {
             {0.000000,-2.052616},{0.055584,-1.897695},{-0.247226,-1.863222},
             {-0.243871,-1.940010},{0.095727,-1.966751},{0.107707,-1.885520},
@@ -462,24 +462,10 @@ std::map<std::string, WeaponData> g_weaponDatabase = {
         ImVec4(0.15f, 1.0f, 0.35f, 1.0f),
         "AR"
     }},
-    {"M39", {
-        "M39", "🎖️ M39 Rifle",
-        {{0.9,-1.6}},
-        {}, 175.0,
-        ImVec4(0.5f, 0.8f, 1.0f, 1.0f),
-        "AR"
-    }},
-    {"SAR", {
-        "SAR", "🔫 Semi Auto Rifle",
-        {{0.0,-1.4}},
-        {}, 175.0,
-        ImVec4(0.8f, 0.6f, 0.35f, 1.0f),
-        "AR"
-    }},
 
     // SUBMACHINE GUNS
     {"MP5", {
-        "MP5", "💨 MP5A4",
+        "MP5", "MP5A4",
         {
             {0.125361,-1.052446},{-0.099548,-0.931548},{0.027825,-0.954094},
             {-0.013715,-0.851504},{-0.007947,-1.070579},{0.096096,-1.018017},
@@ -497,7 +483,7 @@ std::map<std::string, WeaponData> g_weaponDatabase = {
         "SMG"
     }},
     {"SMG", {
-        "SMG", "⚙️ Custom SMG",
+        "SMG", "Custom SMG",
         {
             {-0.114414,-0.680635},{0.008685,-0.676597},{0.010312,-0.682837},
             {0.064825,-0.691344},{0.104075,-0.655617},{-0.088118,-0.660429},
@@ -513,7 +499,7 @@ std::map<std::string, WeaponData> g_weaponDatabase = {
         "SMG"
     }},
     {"THOMPSON", {
-        "THOMPSON", "🎯 Thompson",
+        "THOMPSON", "Thompson",
         {
             {-0.114413,-0.680635},{0.008686,-0.676598},{0.010312,-0.682837},
             {0.064825,-0.691345},{0.104075,-0.655618},{-0.088118,-0.660429},
@@ -530,7 +516,7 @@ std::map<std::string, WeaponData> g_weaponDatabase = {
 
     // LIGHT MACHINE GUNS
     {"M249", {
-        "M249", "💥 M249",
+        "M249", "M249",
         {
             {0.0,-1.49},{0.39,-1.49},{0.72,-1.49},{0.72,-1.49},{0.72,-1.49},
             {0.72,-1.49},{0.72,-1.49},{0.72,-1.49},{0.72,-1.49},{0.72,-1.49},
@@ -542,42 +528,18 @@ std::map<std::string, WeaponData> g_weaponDatabase = {
         "LMG"
     }},
 
-    // PISTOLS
-    {"PYTHON", {
-        "PYTHON", "🐍 Python Revolver",
-        {{0.0,-5.8}},
-        {}, 150.0,
-        ImVec4(0.85f, 0.65f, 0.15f, 1.0f),
-        "PISTOL"
-    }},
-    {"M92", {
-        "M92", "🔰 M92 Pistol",
-        {{0.0,-3.0}},
-        {}, 150.0,
-        ImVec4(0.5f, 0.5f, 0.5f, 1.0f),
-        "PISTOL"
-    }},
-    {"SEMIPISTOL", {
-        "SEMIPISTOL", "⭐ Semi Auto Pistol",
-        {{0.0,-0.95}},
-        {}, 150.0,
-        ImVec4(0.65f, 0.65f, 0.7f, 1.0f),
-        "PISTOL"
-    }},
-    {"REVOLVER", {
-        "REVOLVER", "🎲 Revolver",
-        {{0.0,-1.7}},
-        {}, 175.0,
-        ImVec4(0.55f, 0.35f, 0.2f, 1.0f),
-        "PISTOL"
-    }},
-
     // SPECIAL
-    {"NAILGUN", {
-        "NAILGUN", "🔨 Nailgun",
-        {{0.2,-2.1}},
+    {"SKS", {
+        "SKS", "SKS",
+        {
+            {0.0, -1.966075}, {0.0, -2.455723}, {0.320768, -2.075308},
+            {0.565088, -2.073886}, {0.911924, -2.322124}, {1.081, -2.622581},
+            {1.431705, -2.164627}, {1.500359, -2.165166}, {1.450049, -2.298362},
+            {1.369828, -2.133563}, {1.476682, -2.002966}, {1.82793, -2.159637},
+            {1.661027, -2.234897}, {1.214138, -2.018232}, {1.852968, -2.239446}
+        },
         {}, 150.0,
-        ImVec4(0.75f, 0.75f, 0.2f, 1.0f),
+        ImVec4(0.75f, 0.55f, 0.35f, 1.0f),
         "SPECIAL"
     }}
 };
@@ -717,7 +679,7 @@ struct AppState {
 
     int currentTab = 0;
     bool showPatternVisualizer = true;
-    float visualizerScale = 3.0f;
+    float visualizerScale = 15.0f;  // Zoom ajustable con slider
     bool showStats = true;
     bool showLogs = true;
 
@@ -1000,7 +962,7 @@ void RenderConnectionStatus() {
     float titleGlow = g_appState.animation.glow;
     ImVec4 titleColor = ImVec4(0.2f + titleGlow * 0.3f, 0.7f + titleGlow * 0.3f, 1.0f, 1.0f);
     ImGui::PushFont(ImGui::GetIO().Fonts->Fonts[0]);
-    ImGui::TextColored(titleColor, "━━━ ESTADO DE CONEXIÓN ━━━");
+    ImGui::TextColored(titleColor, "ESTADO DE CONEXION");
     ImGui::PopFont();
     ImGui::Separator();
 
@@ -1109,7 +1071,7 @@ void RenderConnectionStatus() {
     ImGui::TextColored(ImVec4(0.5f, 1.0f, 0.8f, 1.0f),
         "%llu", g_appState.connectionStats.commandsSent.load());
 
-    ImGui::Text("Tasa de éxito:");
+    ImGui::Text("Tasa de exito:");
     ImGui::SameLine(180);
     float successRate = g_appState.connectionStats.getSuccessRate();
     ImVec4 rateColor = successRate > 95.0f ? ImVec4(0.3f, 1.0f, 0.5f, 1.0f) :
@@ -1133,7 +1095,7 @@ void RenderConnectionStatus() {
         ImGui::PushStyleColor(ImGuiCol_Button,
             ImVec4(0.8f + buttonPulse * 0.1f, 0.2f, 0.2f, 1.0f));
         ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(1.0f, 0.3f, 0.3f, 1.0f));
-        if (ImGui::Button("✖ DESCONECTAR", ImVec2(-1, 35))) {
+        if (ImGui::Button("DESCONECTAR", ImVec2(-1, 35))) {
             g_appState.makcuDevice.disconnect();
             g_appState.deviceConnected = false;
             g_appState.connectionStats.isConnected = false;
@@ -1145,7 +1107,7 @@ void RenderConnectionStatus() {
         ImGui::PushStyleColor(ImGuiCol_Button,
             ImVec4(0.2f, 0.6f + buttonPulse * 0.2f, 0.3f, 1.0f));
         ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.3f, 0.8f, 0.4f, 1.0f));
-        if (ImGui::Button("✓ CONECTAR", ImVec2(-1, 35))) {
+        if (ImGui::Button("CONECTAR", ImVec2(-1, 35))) {
             if (InitializeMakcu()) {
                 ImVec2 btnPos = ImGui::GetItemRectMin();
                 g_appState.particles.emit(
@@ -1163,26 +1125,28 @@ void RenderConnectionStatus() {
 }
 
 // ============================================================================
-// ENHANCED PATTERN VISUALIZER
+// ENHANCED PATTERN VISUALIZER - ZOOM FIJO ALTO
 // ============================================================================
 
 void RenderEnhancedPatternVisualizer() {
     ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 12.0f);
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(20, 20));
-    ImGui::BeginChild("PatternVisualizer", ImVec2(0.0f, 500.0f), true,
+    ImGui::BeginChild("PatternVisualizer", ImVec2(0.0f, 650.0f), true,
         ImGuiWindowFlags_NoScrollbar);
 
     // Título animado
     float glow = g_appState.animation.glow;
     ImVec4 titleColor = ImVec4(1.0f, 0.4f + glow * 0.3f, 0.2f, 1.0f);
-    ImGui::TextColored(titleColor, "━━━ VISUALIZADOR DE PATRÓN ━━━");
+    ImGui::TextColored(titleColor, "VISUALIZADOR DE PATRON DE RETROCESO");
     ImGui::Separator();
 
-    // Controles
-    ImGui::Text("🔍 Zoom:");
+    // Control de zoom con slider AMPLIO
+    ImGui::Text("Zoom:");
     ImGui::SameLine();
-    ImGui::SetNextItemWidth(150);
-    if (ImGui::SliderFloat("##zoom", &g_appState.visualizerScale, 1.0f, 10.0f, "%.1fx")) {
+    ImGui::SetNextItemWidth(300.0f);
+
+    // Slider con rango MUY AMPLIO (1x a 100x)
+    if (ImGui::SliderFloat("##zoom", &g_appState.visualizerScale, 1.0f, 100.0f, "%.1fx", ImGuiSliderFlags_Logarithmic)) {
         ImVec2 pos = ImGui::GetCursorScreenPos();
         g_appState.particles.emit(
             ImVec2(pos.x + 200, pos.y),
@@ -1191,21 +1155,25 @@ void RenderEnhancedPatternVisualizer() {
     }
 
     ImGui::SameLine();
-    if (ImGui::Button("⟲ Reset", ImVec2(80, 0))) {
-        g_appState.visualizerScale = 3.0f;
+    if (ImGui::Button("Reset (15x)", ImVec2(100, 0))) {
+        g_appState.visualizerScale = 15.0f;
     }
 
     ImGui::SameLine();
-    ImGui::Checkbox("📊 Stats", &g_appState.showStats);
+    ImGui::Checkbox("Stats", &g_appState.showStats);
+
+    // Mostrar valor actual grande
+    ImGui::SameLine();
+    ImGui::TextColored(ImVec4(0.3f, 1.0f, 0.5f, 1.0f), "Actual: %.1fx", g_appState.visualizerScale);
 
     ImGui::Spacing();
 
-    // Canvas para visualización
+    // Canvas para visualización - CENTRADO PARA VER PATRÓN COMPLETO
     ImVec2 canvas_pos = ImGui::GetCursorScreenPos();
-    ImVec2 canvas_size = ImVec2(ImGui::GetContentRegionAvail().x, 380.0f);
+    ImVec2 canvas_size = ImVec2(ImGui::GetContentRegionAvail().x, 530.0f);
     ImVec2 canvas_center = ImVec2(
-        canvas_pos.x + canvas_size.x * 0.5f,
-        canvas_pos.y + canvas_size.y * 0.15f
+        canvas_pos.x + canvas_size.x * 0.25f,  // Centrar más a la izquierda
+        canvas_pos.y + canvas_size.y * 0.15f  // Centrar arriba para dar espacio vertical
     );
 
     ImDrawList* draw_list = ImGui::GetWindowDrawList();
@@ -1221,13 +1189,13 @@ void RenderEnhancedPatternVisualizer() {
         IM_COL32(15 + wave * 50, 18 + wave * 50, 30 + wave * 50, 255)
     );
 
-    // Grid animado
-    const int grid_step = 50;
+    // Grid animado para zoom 8x
+    const int grid_step = 50;  // Grid espaciado apropiado
     float gridPulse = g_appState.animation.pulse;
-    float gridAlpha = 40 + gridPulse * 30;
+    float gridAlpha = 35 + gridPulse * 20;
 
     for (int x = 0; x < canvas_size.x; x += grid_step) {
-        float lineAlpha = gridAlpha + sin(g_appState.animation.time + x * 0.01f) * 15;
+        float lineAlpha = gridAlpha + sin(g_appState.animation.time + x * 0.01f) * 10;
         draw_list->AddLine(
             ImVec2(canvas_pos.x + x, canvas_pos.y),
             ImVec2(canvas_pos.x + x, canvas_pos.y + canvas_size.y),
@@ -1235,7 +1203,7 @@ void RenderEnhancedPatternVisualizer() {
         );
     }
     for (int y = 0; y < canvas_size.y; y += grid_step) {
-        float lineAlpha = gridAlpha + sin(g_appState.animation.time + y * 0.01f) * 15;
+        float lineAlpha = gridAlpha + sin(g_appState.animation.time + y * 0.01f) * 10;
         draw_list->AddLine(
             ImVec2(canvas_pos.x, canvas_pos.y + y),
             ImVec2(canvas_pos.x + canvas_size.x, canvas_pos.y + y),
@@ -1243,38 +1211,41 @@ void RenderEnhancedPatternVisualizer() {
         );
     }
 
-    // Crosshair central con efecto de brillo
+    // Crosshair central con efecto de brillo - ESCALABLE
     float crosshairGlow = g_appState.animation.glow;
-    float crosshairSize = 18.0f + crosshairGlow * 4.0f;
+    float zoomScaleCrosshair = std::min(1.0f, 15.0f / g_appState.visualizerScale);
+    float crosshairSize = (20.0f + crosshairGlow * 5.0f) * zoomScaleCrosshair;
 
     // Anillos de brillo
     for (int i = 0; i < 3; i++) {
-        float ring_radius = 6.0f + i * 4.0f + crosshairGlow * 3.0f;
+        float ring_radius = (8.0f + i * 5.0f + crosshairGlow * 4.0f) * zoomScaleCrosshair;
         draw_list->AddCircle(
             canvas_center,
-            ring_radius,
-            IM_COL32(100, 200, 255, 40 - i * 10),
-            32, 1.5f
+            std::max(3.0f, ring_radius),
+            IM_COL32(100, 200, 255, 60 - i * 15),
+            32, std::max(1.0f, 2.0f * zoomScaleCrosshair)
         );
     }
 
-    // Cruz central
+    // Cruz central VISIBLE
     draw_list->AddLine(
         ImVec2(canvas_center.x - crosshairSize, canvas_center.y),
         ImVec2(canvas_center.x + crosshairSize, canvas_center.y),
-        IM_COL32(150 + crosshairGlow * 105, 220 + crosshairGlow * 35, 255, 255), 3.0f
+        IM_COL32(150 + crosshairGlow * 105, 220 + crosshairGlow * 35, 255, 255),
+        std::max(2.0f, 4.0f * zoomScaleCrosshair)
     );
     draw_list->AddLine(
         ImVec2(canvas_center.x, canvas_center.y - crosshairSize),
         ImVec2(canvas_center.x, canvas_center.y + crosshairSize),
-        IM_COL32(150 + crosshairGlow * 105, 220 + crosshairGlow * 35, 255, 255), 3.0f
+        IM_COL32(150 + crosshairGlow * 105, 220 + crosshairGlow * 35, 255, 255),
+        std::max(2.0f, 4.0f * zoomScaleCrosshair)
     );
 
     // Núcleo brillante
     draw_list->AddCircleFilled(
         canvas_center,
-        4.0f + crosshairGlow * 2.0f,
-        IM_COL32(200, 240, 255, 200)
+        std::max(3.0f, (7.0f + crosshairGlow * 3.0f) * zoomScaleCrosshair),
+        IM_COL32(200, 240, 255, 230)
     );
 
     // Dibujar patrón del arma con efectos avanzados
@@ -1289,20 +1260,25 @@ void RenderEnhancedPatternVisualizer() {
             canvas_center.y + static_cast<float>(point.y * g_appState.visualizerScale)
         );
 
-        // Trail con gradiente y brillo
+        // Trail con gradiente y brillo - ESCALABLE CON ZOOM
         float progress = (float)i / weapon.pattern.size();
-        float alpha = 0.4f + progress * 0.6f;
+        float alpha = 0.6f + progress * 0.4f;
+
+        // Calcular escala dinámica basada en zoom
+        float zoomScale = std::min(1.0f, 15.0f / g_appState.visualizerScale);
+        float baseLineThickness = 4.0f * zoomScale;
+        float baseGlowThickness = 8.0f * zoomScale;
 
         // Glow del trail
         draw_list->AddLine(
             last_point, current_point,
             IM_COL32(
-                weapon.color.x * 255 * 0.5f,
-                weapon.color.y * 255 * 0.5f,
-                weapon.color.z * 255 * 0.5f,
-                80
+                weapon.color.x * 255 * 0.7f,
+                weapon.color.y * 255 * 0.7f,
+                weapon.color.z * 255 * 0.7f,
+                100
             ),
-            6.0f
+            std::max(2.0f, baseGlowThickness)
         );
 
         // Trail principal
@@ -1312,58 +1288,64 @@ void RenderEnhancedPatternVisualizer() {
             weapon.color.z,
             alpha
         );
-        draw_list->AddLine(last_point, current_point, line_color, 3.5f);
+        draw_list->AddLine(last_point, current_point, line_color, std::max(1.5f, baseLineThickness));
 
-        // Puntos de bala con animación
-        float point_size = (i == 0) ? 9.0f : (5.0f + sin(g_appState.animation.time * 2.0f + i * 0.2f) * 1.5f);
+        // Puntos de bala - ESCALABLES
+        float basePointSize = (i == 0) ? 12.0f : 8.0f;
+        float point_size = basePointSize * zoomScale + sin(g_appState.animation.time * 2.0f + i * 0.2f) * 2.0f * zoomScale;
         float point_glow = (sin(g_appState.animation.time * 3.0f + i * 0.3f) + 1.0f) * 0.5f;
 
         // Halo exterior
-        if (i % 3 == 0) {
-            draw_list->AddCircleFilled(
-                current_point,
-                point_size + 4.0f,
-                IM_COL32(
-                    weapon.color.x * 255 * 0.5f,
-                    weapon.color.y * 255 * 0.5f,
-                    weapon.color.z * 255 * 0.5f,
-                    60 + point_glow * 60
-                )
-            );
-        }
+        draw_list->AddCircleFilled(
+            current_point,
+            point_size + 5.0f * zoomScale,
+            IM_COL32(
+                weapon.color.x * 255 * 0.6f,
+                weapon.color.y * 255 * 0.6f,
+                weapon.color.z * 255 * 0.6f,
+                80 + point_glow * 80
+            )
+        );
 
-        // Punto principal
+        // Punto principal - ESCALABLE
         ImU32 point_color = (i == 0) ?
             IM_COL32(100 + point_glow * 155, 255, 150, 255) :
             IM_COL32(255, 255 - progress * 155, 100 + point_glow * 155, 255);
 
-        draw_list->AddCircleFilled(current_point, point_size, point_color);
+        draw_list->AddCircleFilled(current_point, std::max(2.0f, point_size), point_color);
 
-        // Borde brillante
+        // Borde brillante - ESCALABLE
         draw_list->AddCircle(
             current_point,
-            point_size,
-            IM_COL32(255, 255, 255, 180),
-            0, 2.0f
+            std::max(2.0f, point_size),
+            IM_COL32(255, 255, 255, 220),
+            0, std::max(1.5f, 2.5f * zoomScale)
         );
 
-        // Números de bala con sombra
-        if (g_appState.showStats && (i % 5 == 0 || i == 0)) {
+        // Números de bala visibles - solo mostrar si hay espacio
+        if (g_appState.showStats && zoomScale > 0.3f && (i % 3 == 0 || i == 0 || i == weapon.pattern.size() - 1)) {
             char buf[8];
             snprintf(buf, sizeof(buf), "%zu", i + 1);
 
-            // Sombra múltiple para mejor legibilidad
-            for (int j = 3; j > 0; j--) {
+            float textScale = std::max(0.5f, zoomScale);
+            float fontSize = 15.0f * textScale;
+            float offsetX = 12.0f * textScale;
+            float offsetY = 10.0f * textScale;
+
+            // Sombra
+            for (int j = 4; j > 0; j--) {
                 draw_list->AddText(
-                    ImVec2(current_point.x + 10.0f + j, current_point.y - 8.0f + j),
-                    IM_COL32(0, 0, 0, 120 - j * 30),
+                    ImVec2(current_point.x + offsetX + j * textScale, current_point.y - offsetY + j * textScale),
+                    IM_COL32(0, 0, 0, 150 - j * 30),
                     buf
                 );
             }
 
-            // Texto principal con color del arma
+            // Texto principal
+            ImFont* font = ImGui::GetFont();
             draw_list->AddText(
-                ImVec2(current_point.x + 10.0f, current_point.y - 8.0f),
+                font, fontSize,
+                ImVec2(current_point.x + offsetX, current_point.y - offsetY),
                 IM_COL32(
                     255,
                     255 - progress * 100,
@@ -1388,16 +1370,16 @@ void RenderEnhancedPatternVisualizer() {
 
     // Primera bala
     draw_list->AddCircleFilled(
-        ImVec2(ImGui::GetCursorScreenPos().x + 6, ImGui::GetCursorScreenPos().y + 10),
-        5.0f + legendPulse,
+        ImVec2(ImGui::GetCursorScreenPos().x + 7, ImGui::GetCursorScreenPos().y + 11),
+        7.0f + legendPulse * 1.0f,
         IM_COL32(100, 255, 150, 255)
     );
     draw_list->AddCircle(
-        ImVec2(ImGui::GetCursorScreenPos().x + 6, ImGui::GetCursorScreenPos().y + 10),
-        5.0f + legendPulse,
-        IM_COL32(255, 255, 255, 200), 0, 2.0f
+        ImVec2(ImGui::GetCursorScreenPos().x + 7, ImGui::GetCursorScreenPos().y + 11),
+        7.0f + legendPulse * 1.0f,
+        IM_COL32(255, 255, 255, 220), 0, 2.5f
     );
-    ImGui::Dummy(ImVec2(18, 20));
+    ImGui::Dummy(ImVec2(20, 22));
     ImGui::SameLine();
     ImGui::TextColored(ImVec4(0.5f, 1.0f, 0.7f, 1.0f), "Primera bala");
 
@@ -1405,11 +1387,11 @@ void RenderEnhancedPatternVisualizer() {
 
     // Trayectoria
     draw_list->AddCircleFilled(
-        ImVec2(ImGui::GetCursorScreenPos().x + 6, ImGui::GetCursorScreenPos().y + 10),
-        5.0f,
+        ImVec2(ImGui::GetCursorScreenPos().x + 7, ImGui::GetCursorScreenPos().y + 11),
+        7.0f,
         ImColor(weapon.color)
     );
-    ImGui::Dummy(ImVec2(18, 20));
+    ImGui::Dummy(ImVec2(20, 22));
     ImGui::SameLine();
     ImGui::TextColored(weapon.color, "Trayectoria");
 
@@ -1432,13 +1414,13 @@ void RenderWeaponsTab() {
 
     // Category selector
     ImGui::BeginChild("CategorySelector", ImVec2(0.0f, 60.0f), true);
-    ImGui::Text("🎯 CATEGORÍA:");
+    ImGui::Text("CATEGORIA:");
     ImGui::SameLine();
 
-    const char* categories[] = { "ALL", "AR", "SMG", "LMG", "PISTOL", "SPECIAL" };
-    float buttonWidth = (ImGui::GetContentRegionAvail().x - 60.0f) / 6.0f;
+    const char* categories[] = { "ALL", "AR", "SMG", "LMG", "SPECIAL" };
+    float buttonWidth = (ImGui::GetContentRegionAvail().x - 60.0f) / 5.0f;
 
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 5; i++) {
         if (i > 0) ImGui::SameLine();
 
         bool isSelected = (g_appState.selectedCategory == categories[i]);
@@ -1462,7 +1444,7 @@ void RenderWeaponsTab() {
 
     // Weapon grid
     ImGui::BeginChild("WeaponSelection", ImVec2(0.0f, 250.0f), true);
-    ImGui::Text("🔫 ARMAS DISPONIBLES");
+    ImGui::Text("ARMAS DISPONIBLES");
     ImGui::Separator();
 
     ImGui::Columns(4, nullptr, false);
@@ -1522,9 +1504,9 @@ void RenderWeaponsTab() {
         1.0f
     );
 
-    ImGui::TextColored(infoColor, "▶ %s", weapon.displayName.c_str());
+    ImGui::TextColored(infoColor, "%s", weapon.displayName.c_str());
     ImGui::SameLine();
-    ImGui::TextDisabled("| Balas: %zu | Cadencia: %.1f ms | Categoría: %s",
+    ImGui::TextDisabled("| Balas: %zu | Cadencia: %.1f ms | Categoria: %s",
         weapon.pattern.size(), weapon.baseWaitTime, weapon.category.c_str());
 
     ImGui::EndChild();
@@ -1539,13 +1521,13 @@ void RenderAttachmentsTab() {
     ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 12.0f);
     ImGui::BeginChild("Attachments", ImVec2(0.0f, 220.0f), true);
 
-    ImGui::Text("🔧 ACCESORIOS");
+    ImGui::Text("ACCESORIOS");
     ImGui::Separator();
 
     ImGui::Columns(2, nullptr, false);
 
     // Scopes
-    ImGui::Text("🎯 Mira:");
+    ImGui::Text("Mira:");
     for (int i = 0; i < 4; i++) {
         bool is_selected = (g_appState.selectedScope == i);
 
@@ -1568,7 +1550,7 @@ void RenderAttachmentsTab() {
     ImGui::NextColumn();
 
     // Barrels
-    ImGui::Text("🔫 Cañón:");
+    ImGui::Text("Canon:");
     for (int i = 0; i < 2; i++) {
         bool is_selected = (g_appState.selectedBarrel == i);
 
@@ -1580,7 +1562,7 @@ void RenderAttachmentsTab() {
 
         if (ImGui::Button(g_barrels[i].name, ImVec2(-1.0f, 38.0f))) {
             g_appState.selectedBarrel = i;
-            g_appState.addLog("[INFO] Cañón cambiado a " + std::string(g_barrels[i].name));
+            g_appState.addLog("[INFO] Canon cambiado a " + std::string(g_barrels[i].name));
         }
 
         if (is_selected) {
@@ -1602,30 +1584,30 @@ void RenderSettingsTab() {
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(20, 20));
     ImGui::BeginChild("Settings", ImVec2(0.0f, 0.0f), true);
 
-    ImGui::Text("⚙️ CONFIGURACIÓN");
+    ImGui::Text("CONFIGURACION");
     ImGui::Separator();
     ImGui::Spacing();
 
     // Sensitivity con barra animada
-    ImGui::Text("🎮 Sensibilidad");
+    ImGui::Text("Sensibilidad");
     ImGui::SetNextItemWidth(-1);
     if (ImGui::SliderFloat("##sens", &g_appState.sensitivity, 0.001f, 2.0f, "%.3f")) {
         g_appState.addLog("[INFO] Sensibilidad: " + std::to_string(g_appState.sensitivity));
     }
     if (ImGui::IsItemHovered()) {
-        ImGui::SetTooltip("Sensibilidad del ratón en el juego");
+        ImGui::SetTooltip("Sensibilidad del raton en el juego");
     }
 
     ImGui::Spacing();
 
     // FOV
-    ImGui::Text("👁️ Campo de Visión (FOV)");
+    ImGui::Text("Campo de Vision (FOV)");
     ImGui::SetNextItemWidth(-1);
     if (ImGui::SliderInt("##fov", &g_appState.fov, 65, 120)) {
         g_appState.addLog("[INFO] FOV: " + std::to_string(g_appState.fov));
     }
     if (ImGui::IsItemHovered()) {
-        ImGui::SetTooltip("Campo de visión en el juego");
+        ImGui::SetTooltip("Campo de vision en el juego");
     }
 
     ImGui::Spacing();
@@ -1633,7 +1615,7 @@ void RenderSettingsTab() {
     ImGui::Spacing();
 
     // Smoothing con toggle animado
-    bool smoothingChanged = ImGui::Checkbox("✨ Suavizado de Movimiento", &g_appState.smoothing);
+    bool smoothingChanged = ImGui::Checkbox("Suavizado de Movimiento", &g_appState.smoothing);
     if (smoothingChanged) {
         g_appState.addLog(g_appState.smoothing ?
             "[INFO] Suavizado activado" : "[INFO] Suavizado desactivado");
@@ -1647,7 +1629,7 @@ void RenderSettingsTab() {
         }
     }
     if (ImGui::IsItemHovered()) {
-        ImGui::SetTooltip("Suaviza los movimientos del ratón para un control más natural");
+        ImGui::SetTooltip("Suaviza los movimientos del raton para un control mas natural");
     }
 
     if (g_appState.smoothing) {
@@ -1657,7 +1639,7 @@ void RenderSettingsTab() {
             g_appState.addLog("[INFO] Factor: " + std::to_string(g_appState.smoothingFactor));
         }
         if (ImGui::IsItemHovered()) {
-            ImGui::SetTooltip("Mayor = más suave pero más lento");
+            ImGui::SetTooltip("Mayor = mas suave pero mas lento");
         }
         ImGui::Unindent();
     }
@@ -1667,7 +1649,7 @@ void RenderSettingsTab() {
     ImGui::Spacing();
 
     // Multiplicadores con visualización animada
-    ImGui::Text("📊 MULTIPLICADORES ACTUALES:");
+    ImGui::Text("MULTIPLICADORES ACTUALES:");
     ImGui::Spacing();
 
     float scopeMult = static_cast<float>(GetScopeMultiplier());
@@ -1682,7 +1664,7 @@ void RenderSettingsTab() {
     ImGui::ProgressBar(scopeMult / 5.0f, ImVec2(-1, 25),
         (std::to_string(scopeMult) + "x").c_str());
 
-    ImGui::Text("Cañón:");
+    ImGui::Text("Canon:");
     ImGui::SameLine(150);
     ImGui::ProgressBar(barrelMult / 1.5f, ImVec2(-1, 25),
         (std::to_string(barrelMult) + "x").c_str());
@@ -1708,12 +1690,12 @@ void RenderConsoleLog() {
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(15, 15));
     ImGui::BeginChild("ConsoleLog", ImVec2(0.0f, 220.0f), true);
 
-    ImGui::TextColored(ImVec4(0.4f, 1.0f, 0.6f, 1.0f), "📋 CONSOLA DE EVENTOS");
+    ImGui::TextColored(ImVec4(0.4f, 1.0f, 0.6f, 1.0f), "CONSOLA DE EVENTOS");
     ImGui::SameLine();
     float pulse = g_appState.animation.pulse;
     ImGui::PushStyleColor(ImGuiCol_Button,
         ImVec4(0.6f + pulse * 0.2f, 0.2f, 0.2f, 1.0f));
-    if (ImGui::SmallButton("🗑️ Limpiar")) {
+    if (ImGui::SmallButton("Limpiar")) {
         std::lock_guard<std::mutex> lock(g_appState.consoleMutex);
         g_appState.consoleLines.clear();
         g_appState.addLog("[INFO] Consola limpiada");
@@ -1764,7 +1746,7 @@ void RenderPracticeMode() {
 
     float glow = g_appState.animation.glow;
     ImVec4 titleColor = ImVec4(1.0f, 0.3f + glow * 0.4f, 1.0f, 1.0f);
-    ImGui::TextColored(titleColor, "🎯 MODO DE PRÁCTICA");
+    ImGui::TextColored(titleColor, "MODO DE PRACTICA");
     ImGui::Separator();
 
     if (!g_appState.practiceSession.active) {
@@ -1772,12 +1754,12 @@ void RenderPracticeMode() {
         ImGui::Indent(40.0f);
 
         ImGui::TextWrapped(
-            "¡Bienvenido al Modo de Práctica!\n\n"
-            "Este modo rastreará tu precisión en el control de retroceso en tiempo real.\n"
-            "Tus movimientos del ratón se compararán con el patrón ideal.\n\n"
-            "Recibirás una calificación (S+, S, A, B, C, D) basada en:\n"
-            "• Precisión - Qué tan cerca sigues el patrón\n\n"
-            "¿Listo para probar tus habilidades?"
+            "Bienvenido al Modo de Practica!\n\n"
+            "Este modo rastreara tu precision en el control de retroceso en tiempo real.\n"
+            "Tus movimientos del raton se compararan con el patron ideal.\n\n"
+            "Recibiras una calificacion (S+, S, A, B, C, D) basada en:\n"
+            "- Precision - Que tan cerca sigues el patron\n\n"
+            "Listo para probar tus habilidades?"
         );
 
         ImGui::Dummy(ImVec2(0, 30));
@@ -1792,9 +1774,9 @@ void RenderPracticeMode() {
         ImGui::PushStyleColor(ImGuiCol_ButtonActive,
             ImVec4(0.2f, 0.7f, 0.3f, 1.0f));
 
-        if (ImGui::Button("▶ COMENZAR PRÁCTICA", ImVec2(250, 55))) {
+        if (ImGui::Button("COMENZAR PRACTICA", ImVec2(250, 55))) {
             g_appState.practiceSession.start();
-            g_appState.addLog("[INFO] ¡Sesión de práctica iniciada!");
+            g_appState.addLog("[INFO] Sesion de practica iniciada!");
             ImVec2 btnPos = ImGui::GetItemRectMin();
             ImVec2 btnSize = ImGui::GetItemRectSize();
             g_appState.particles.emit(
@@ -1807,7 +1789,7 @@ void RenderPracticeMode() {
 
     }
     else {
-        ImGui::TextColored(ImVec4(1.0f, 1.0f, 0.3f, 1.0f), "⚡ SESIÓN ACTIVA");
+        ImGui::TextColored(ImVec4(1.0f, 1.0f, 0.3f, 1.0f), "SESION ACTIVA");
         ImGui::Separator();
 
         auto& session = g_appState.practiceSession;
@@ -1825,7 +1807,7 @@ void RenderPracticeMode() {
 
         ImGui::NextColumn();
 
-        ImGui::Text("Desv. Máxima:");
+        ImGui::Text("Desv. Maxima:");
         ImGui::TextColored(ImVec4(1.0f, 0.7f, 0.5f, 1.0f), "%.2f px", session.maxDeviation);
 
         ImGui::Columns(1);
@@ -1845,9 +1827,9 @@ void RenderPracticeMode() {
 
         ImGui::Spacing();
 
-        if (ImGui::Button("⏹ DETENER Y EVALUAR", ImVec2(-1, 45))) {
+        if (ImGui::Button("DETENER Y EVALUAR", ImVec2(-1, 45))) {
             session.stop();
-            g_appState.addLog("[INFO] ¡Sesión completada!");
+            g_appState.addLog("[INFO] Sesion completada!");
         }
     }
 
@@ -1873,14 +1855,14 @@ void RenderPracticeMode() {
             ));
 
         char gradeText[32];
-        snprintf(gradeText, sizeof(gradeText), "🏆 GRADO: %s", grade.c_str());
+        snprintf(gradeText, sizeof(gradeText), "GRADO: %s", grade.c_str());
         ImGui::Button(gradeText, ImVec2(180, 80));
         ImGui::PopStyleColor();
 
         ImGui::Spacing();
         ImGui::Columns(2, nullptr, false);
 
-        ImGui::Text("Puntuación Total:");
+        ImGui::Text("Puntuacion Total:");
         ImGui::TextColored(gradeColor, "%.1f%%", session.accuracyScore);
 
         ImGui::NextColumn();
@@ -1892,7 +1874,7 @@ void RenderPracticeMode() {
         ImGui::Columns(1);
 
         ImGui::Spacing();
-        if (ImGui::Button("🔄 INTENTAR DE NUEVO", ImVec2(-1, 40))) {
+        if (ImGui::Button("INTENTAR DE NUEVO", ImVec2(-1, 40))) {
             g_appState.practiceSession.start();
         }
     }
@@ -1931,34 +1913,34 @@ void RenderMainUI() {
         return;
     }
 
-    // Menu Bar con iconos
+    // Menu Bar
     if (ImGui::BeginMenuBar()) {
-        if (ImGui::BeginMenu("📁 Archivo")) {
-            if (ImGui::MenuItem("💾 Guardar Config", "Ctrl+S")) {
-                g_appState.addLog("[INFO] Configuración guardada");
+        if (ImGui::BeginMenu("Archivo")) {
+            if (ImGui::MenuItem("Guardar Config", "Ctrl+S")) {
+                g_appState.addLog("[INFO] Configuracion guardada");
             }
-            if (ImGui::MenuItem("📂 Cargar Config", "Ctrl+O")) {
-                g_appState.addLog("[INFO] Configuración cargada");
+            if (ImGui::MenuItem("Cargar Config", "Ctrl+O")) {
+                g_appState.addLog("[INFO] Configuracion cargada");
             }
             ImGui::Separator();
-            if (ImGui::MenuItem("❌ Salir", "Alt+F4")) {
+            if (ImGui::MenuItem("Salir", "Alt+F4")) {
                 exit(0);
             }
             ImGui::EndMenu();
         }
 
-        if (ImGui::BeginMenu("👁️ Vista")) {
-            ImGui::MenuItem("📊 Patrón", nullptr, &g_appState.showPatternVisualizer);
-            ImGui::MenuItem("📈 Stats", nullptr, &g_appState.showStats);
-            ImGui::MenuItem("📋 Logs", nullptr, &g_appState.showLogs);
+        if (ImGui::BeginMenu("Vista")) {
+            ImGui::MenuItem("Patron", nullptr, &g_appState.showPatternVisualizer);
+            ImGui::MenuItem("Stats", nullptr, &g_appState.showStats);
+            ImGui::MenuItem("Logs", nullptr, &g_appState.showLogs);
             ImGui::EndMenu();
         }
 
-        if (ImGui::BeginMenu("ℹ️ Ayuda")) {
-            if (ImGui::MenuItem("📖 Acerca de")) {
+        if (ImGui::BeginMenu("Ayuda")) {
+            if (ImGui::MenuItem("Acerca de")) {
                 g_appState.addLog("[INFO] MAKCU Recoil Control Pro 2025 v3.0");
             }
-            if (ImGui::MenuItem("🌐 GitHub")) {
+            if (ImGui::MenuItem("GitHub")) {
                 g_appState.addLog("[INFO] Abriendo GitHub...");
             }
             ImGui::EndMenu();
@@ -1970,10 +1952,10 @@ void RenderMainUI() {
     // Connection Status (siempre visible)
     RenderConnectionStatus();
 
-    // Main Tab Bar con iconos
+    // Main Tab Bar
     ImGui::BeginTabBar("MainTabs", ImGuiTabBarFlags_None);
 
-    if (ImGui::BeginTabItem("🎮 Control")) {
+    if (ImGui::BeginTabItem("Control")) {
         RenderWeaponsTab();
         RenderAttachmentsTab();
 
@@ -1984,39 +1966,39 @@ void RenderMainUI() {
         ImGui::EndTabItem();
     }
 
-    if (ImGui::BeginTabItem("⚙️ Ajustes")) {
+    if (ImGui::BeginTabItem("Ajustes")) {
         RenderSettingsTab();
         ImGui::EndTabItem();
     }
 
-    if (ImGui::BeginTabItem("🎯 Práctica")) {
+    if (ImGui::BeginTabItem("Practica")) {
         RenderPracticeMode();
         ImGui::EndTabItem();
     }
 
-    if (ImGui::BeginTabItem("📊 Estadísticas")) {
+    if (ImGui::BeginTabItem("Estadisticas")) {
         ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 12.0f);
         ImGui::BeginChild("Stats", ImVec2(0, 0), true);
 
-        ImGui::Text("📈 ESTADÍSTICAS DETALLADAS");
+        ImGui::Text("ESTADISTICAS DETALLADAS");
         ImGui::Separator();
 
         auto& weapon = g_weaponDatabase[g_appState.currentWeaponKey];
         ImGui::TextColored(weapon.color, "Arma Actual: %s", weapon.displayName.c_str());
-        ImGui::Text("Longitud del Patrón: %zu balas", weapon.pattern.size());
+        ImGui::Text("Longitud del Patron: %zu balas", weapon.pattern.size());
         ImGui::Text("Cadencia Base: %.2f ms", weapon.baseWaitTime);
-        ImGui::Text("Categoría: %s", weapon.category.c_str());
+        ImGui::Text("Categoria: %s", weapon.category.c_str());
 
         ImGui::Spacing();
         ImGui::Separator();
         ImGui::Spacing();
 
-        ImGui::Text("📡 ESTADÍSTICAS DE SESIÓN:");
+        ImGui::Text("ESTADISTICAS DE SESION:");
         ImGui::BulletText("Comandos Totales: %llu",
             g_appState.connectionStats.commandsSent.load());
         ImGui::BulletText("Comandos Fallidos: %llu",
             g_appState.connectionStats.commandsFailed.load());
-        ImGui::BulletText("Tasa de Éxito: %.1f%%",
+        ImGui::BulletText("Tasa de Exito: %.1f%%",
             g_appState.connectionStats.getSuccessRate());
         ImGui::BulletText("Latencia Media: %.2f ms",
             g_appState.connectionStats.averageLatency);
@@ -2135,7 +2117,7 @@ int main() {
     ::ShowWindow(hwnd, SW_SHOWDEFAULT);
     ::UpdateWindow(hwnd);
 
-    g_appState.addLog("[SUCCESS] Gráficos inicializados");
+    g_appState.addLog("[SUCCESS] Graficos inicializados");
 
     // Setup ImGui
     IMGUI_CHECKVERSION();
@@ -2155,14 +2137,14 @@ int main() {
     std::thread([]() {
         std::this_thread::sleep_for(std::chrono::milliseconds(2500));
         if (InitializeMakcu()) {
-            g_appState.addLog("[SUCCESS] ¡Sistema listo!");
+            g_appState.addLog("[SUCCESS] Sistema listo!");
         }
         else {
             g_appState.addLog("[WARNING] MAKCU no conectado - Modo demo");
         }
         }).detach();
 
-    g_appState.addLog("[INFO] ¡Sistema iniciado!");
+    g_appState.addLog("[INFO] Sistema iniciado!");
 
     // Main loop
     bool done = false;
@@ -2208,7 +2190,7 @@ int main() {
     }
 
     // Cleanup
-    g_appState.addLog("[INFO] Cerrando aplicación...");
+    g_appState.addLog("[INFO] Cerrando aplicacion...");
     g_monitorActive = false;
 
     ImGui_ImplDX9_Shutdown();
